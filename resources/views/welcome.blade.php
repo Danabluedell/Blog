@@ -1,7 +1,12 @@
+<html>
+<title>Mr Robot</title>
+<head>
 <script type="text/javascript" src="js/jquery.js"></script>
 {{--<script type="text/javascript" src="public/form1.php"></script>--}}
 <script src="js/ajax.js"></script>
-
+    {{--<link href='style.css' rel='stylesheet' type='text/css'>--}}
+</head>
+<body>
 @extends('layouts.app')
 
 @section('content')
@@ -47,7 +52,7 @@
                         </div>
                     </div>
 
-                   <div id="result_form"> </div>
+                   <div id="result_form"></div>
 
                         <div class="card">
                     <div class="card-header">List of Game of Thrones Characters</div>
@@ -61,10 +66,11 @@
                             </tr>
                             @foreach($characters as $key => $value)
                                 <tr>
-                                    <td>{{ $value->character }}</td><td>{{ $value->real_name }}</td><td>{{ $value->choose }}</td>
+                                    <td>{{ $value->character }}</td><td>{{ $value->real_name }}</td><td><input type="checkbox" value="{{ $value->id }}"></td>
                                 </tr>
                             @endforeach
                         </table>
+                    <input type="button" value="Delete" id="deleteBtn" style="float: right;width: 33%;">
                     @endif
                 </div>
                 @if(Auth::guest())
@@ -76,8 +82,8 @@
         </div>
     </div>
 @endsection
-
-
+</body>
+</html>
 
 
 

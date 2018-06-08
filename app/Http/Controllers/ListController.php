@@ -20,7 +20,11 @@ class ListController extends Controller
         $character->real_name = $request->input('real_name');
         $character->save();
 
-        return 'add character: '.$character->character.' real name: '.$character->real_name.' id: '.$character->id;
+        return 'add character: ' . $character->character . ' real name: ' . $character->real_name . ' id: ' . $character->id;
     }
 
+    public function remove(Request $request)
+    {
+        $oes = 5+10;
+    }
 }
