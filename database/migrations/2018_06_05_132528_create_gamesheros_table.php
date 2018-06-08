@@ -14,8 +14,9 @@ class CreateGamesherosTable extends Migration
     public function up()
     {
         Schema::create('gamesheros', function (Blueprint $table) {
-            $table->string('Character');
-            $table->string('Real_name');
+            $table->increments('id');
+            $table->string('character');
+            $table->string('real_name');
             $table->timestamps();
         });
     }

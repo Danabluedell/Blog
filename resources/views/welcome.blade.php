@@ -1,3 +1,7 @@
+<script type="text/javascript" src="js/jquery.js"></script>
+{{--<script type="text/javascript" src="public/form1.php"></script>--}}
+<script src="js/ajax.js"></script>
+
 @extends('layouts.app')
 
 @section('content')
@@ -5,25 +9,46 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-success">
+                    {{--<div class="card">--}}
+                        {{--<div class="card-header">List of characters</div>--}}
+                        {{--<div class="card-body">--}}
+                            {{--<form action="/api/add" method="POST">--}}
+                            {{--<p><b>Character</b><br>--}}
+                                    {{--<input type="text" name="character" size="22">--}}
+                           {{--</p>--}}
+                            {{--<p><b>Real name</b><br>--}}
+                               {{--<input type="text" name="real_name" size="25">--}}
+                            {{--</p>--}}
+
+                                {{--<p style="text-align: left" size="30">--}}
+                                    {{--<button type="submit">--}}
+                                        {{--<h1><b>Put new character</b></h1>--}}
+                                     {{--</button>--}}
+                                {{--</p>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+
                     <div class="card">
-                        <div class="card-header">List of characters</div>
+                        <div class="card-header">Add your character with a jquery</div>
                         <div class="card-body">
-                            <form action="/api/add" method="POST">
-                            <p><b>Character</b><br>
+                            <form method="POST" id="ajax_form" action="">
+                                <p><b>Character</b><br>
                                     <input type="text" name="character" size="22">
-                           </p>
-                            <p><b>Real name</b><br>
-                               <input type="text" name="real_name" size="25">
-                            </p>
+                                </p>
+                                <p><b>Real name</b><br>
+                                    <input type="text" name="real_name" size="25">
+                                </p>
 
                                 <p style="text-align: left" size="30">
-                                    <button type="submit">
-                                        <h1><b>Put new character</b></h1>
-                                     </button>
+                                    <input id="btn" type="button" value="Add">
                                 </p>
                             </form>
                         </div>
                     </div>
+
+                   <div id="result_form"> </div>
+
                         <div class="card">
                     <div class="card-header">List of Game of Thrones Characters</div>
                     <div class="card-body">

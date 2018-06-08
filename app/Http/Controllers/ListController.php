@@ -20,7 +20,7 @@ class ListController extends Controller
         $character->real_name = $request->input('real_name');
         $character->save();
 
-        $this->show();
+        return 'add character: '.$character->character.' real name: '.$character->real_name.' id: '.$character->id;
     }
 
 }
